@@ -3,6 +3,66 @@ $marine-blue: #003366;
 $celeste-blue: #1398be;
 $orange: #de9800;
 $grey-color: #ccc;
+$table-border-color: #ddd;
+$collum-title-color: #999;
+
+$background-collum-collors: #f7f7f7;
+
+:root {
+  font-size: 62.5%;
+}
+
+@mixin container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+@mixin club-pos {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+@mixin club-names {
+  font-size: 1.4rem;
+  color: #666;
+  text-align: left;
+}
+
+@mixin points-collum {
+  font-size: 1.4rem;
+  color: #000;
+  text-align: center;
+  font-weight: bold;
+}
+
+@mixin title-col {
+  font-size: 1.3rem;
+  color: #999;
+  text-align: center;
+  font-weight: bold;
+}
+
+@mixin class-col {
+  font-size: 1.4rem;
+  color: #666;
+  text-align: center;
+}
+
+@mixin caption {
+  font-size: 1rem;
+  color: #8f8f8f;
+  text-align: left;
+}
+
+@mixin siglas {
+  font-size: 1rem;
+  color: #555;
+  text-align: center;
+}
 
 * {
   margin: 0;
@@ -18,5 +78,49 @@ body {
 }
 
 .container {
-  display: flex;
+  @include container;
+}
+
+.table {
+  width: 700px;
+  border: 1px solid $table-border-color;
+  border-collapse: collapse;
+
+  .data th {
+    @include title-col;
+    padding: 0.5rem;
+  }
+
+  .libertadores {
+    @include club-pos;
+    color: $marine-blue;
+  }
+
+  .pre-libertadores {
+    @include club-pos;
+    color: $celeste-blue;
+  }
+
+  .sul-americana {
+    @include club-pos;
+    color: $orange;
+  }
+}
+
+.table {
+  tbody tr td:nth-child(2) {
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+    text-align: left;
+    padding: 0.5rem 10rem 0.5rem 0.5 rem;
+  }
+
+  tbody tr td:nth-child(3) {
+    font-size: 14px;
+    color: #000;
+    text-align: center;
+    background-color: #f7f7f7;
+    padding: 0.5rem 1rem;
+  }
 }
