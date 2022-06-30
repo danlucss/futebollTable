@@ -1,4 +1,4 @@
-$red-color: #ff0000;
+$red-color: #c91b04;
 $marine-blue: #003366;
 $celeste-blue: #1398be;
 $orange: #de9800;
@@ -16,8 +16,8 @@ $background-collum-collors: #f7f7f7;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 150px;
-  margin-bottom: 150px;
+  margin-top: 8rem;
+  // margin-bottom: 150px;
 }
 
 @mixin club-pos {
@@ -73,13 +73,25 @@ $background-collum-collors: #f7f7f7;
 
 body {
   font-family: 'Arial', sans-serif;
-  font-size: 16px;
+  // font-size: 16px;
   height: 100vh;
+  overflow: auto;
 }
 
 .container {
   @include container;
 }
+
+// Title
+
+.table-title {
+  border: 1px solid $table-border-color;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+/* Classification */
 
 .table {
   width: 700px;
@@ -105,7 +117,19 @@ body {
     @include club-pos;
     color: $orange;
   }
+
+  .no-class {
+    @include club-pos;
+    color: $grey-color;
+  }
+
+  .rebaixados {
+    @include club-pos;
+    color: $red-color;
+  }
 }
+
+//table style
 
 .table {
   tbody tr td:nth-child(2) {
@@ -113,14 +137,115 @@ body {
     font-weight: bold;
     color: #666;
     text-align: left;
-    padding: 0.5rem 10rem 0.5rem 0.5 rem;
+    padding: 0.5rem 10rem 0.5rem 0.5rem;
   }
 
   tbody tr td:nth-child(3) {
     font-size: 14px;
+    font-weight: bold;
     color: #000;
     text-align: center;
     background-color: #f7f7f7;
+    padding: 0.5rem 0.5rem;
+  }
+  tbody tr td:nth-child(5) {
+    background-color: #f7f7f7;
+  }
+  tbody tr td:nth-child(7) {
+    background-color: #f7f7f7;
+  }
+  tbody tr td:nth-child(8) {
+    padding: 0.5rem;
+  }
+  tbody tr td:nth-child(9) {
+    background-color: #f7f7f7;
+    padding: 0.5rem;
+  }
+  tbody tr td:nth-child(10) {
+    padding: 0.5rem;
+  }
+
+  tbody tr td:nth-child(11) {
+    background-color: #f7f7f7;
+    padding: 3px;
+  }
+
+  tbody tr td {
+    font-size: 14px;
+    color: #666666;
+    text-align: center;
     padding: 0.5rem 1rem;
+    border-top: 1px solid #dddddd;
+  }
+
+  tbody tr .division {
+    border-top: 2px solid #ddd;
+  }
+}
+
+// Table Footer
+.table {
+  tfoot .captions-class td {
+    padding: 1rem;
+    font-size: 1rem;
+    color: #bfbfbf;
+    text-align: left;
+    border-top: 1px solid #ddd;
+  }
+
+  .captions-class i:nth-child(1) {
+    color: $marine-blue;
+  }
+  .captions-class i:nth-child(2) {
+    color: $celeste-blue;
+    margin-left: 0.5rem;
+  }
+  .captions-class i:nth-child(3) {
+    color: $orange;
+    margin-left: 0.5rem;
+  }
+  .captions-class i:nth-child(4) {
+    color: $red-color;
+    margin-left: 0.5rem;
+  }
+
+  tfoot .signs td {
+    padding: 0 5px 5px 10px;
+    font-size: 10px;
+    color: #555555;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .table {
+    width: 400px;
+
+    tbody tr td:nth-child(2) {
+      font-size: 14px;
+      font-weight: bold;
+      color: #666;
+      text-align: left;
+      padding: 0.5rem 2rem 0.5rem 0.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .table {
+    width: 300px;
+
+    tbody tr td:nth-child(2) {
+      font-size: 12px;
+
+      padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    }
+    tbody tr td:nth-child(3) {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+    }
+    tbody tr td {
+      font-size: 10px;
+    }
   }
 }
