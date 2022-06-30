@@ -12,7 +12,7 @@
 body {
   font-family: 'Arial', sans-serif;
   height: 100vh;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .container {
@@ -130,8 +130,8 @@ body {
   border-top: 1px solid #dddddd;
 }
 
-.table tbody tr .division {
-  border-top: 2px solid #ddd;
+.table tbody .division {
+  border-top: 2px solid #ccc;
 }
 
 .table tfoot .captions-class td {
